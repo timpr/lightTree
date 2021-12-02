@@ -1,0 +1,9 @@
+{
+    "sketch": "main.ino",
+    "port": "COM3",
+    "board": "arduino:avr:uno",
+    "output": "../build",
+    "debugger": "jlink",
+    "intelliSenseGen": "global",
+    "programmer": "arduino:arduinoisp"
+}
