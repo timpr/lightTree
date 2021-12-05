@@ -1,13 +1,19 @@
 #include "WarmUp.h"
-#include "LightControls.h"
-#include "Constants.cpp"
+#include "..\LightControls.h"
+#include "..\Constants.cpp"
 
 WarmUp::WarmUp()
 {
 }
 
-void WarmUp::Switch()
+void WarmUp::Play()
 {
+    if (this->RunOnce)
+    {
+        return;
+    }
+    this->RunOnce = true;
+
     LightControls::AllOff();
     LightControls::ExecuteOnEachStrand(FlickerToSteadyOn, 0);
     this->RoundAbout();
