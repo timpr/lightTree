@@ -1,25 +1,21 @@
-#include "TreeRotate.h"
+#include "DecorRotate.h"
 #include "../Constants.cpp"
 #include "../LightControls.h"
 
-/** 
- * Will rotate AROUND the tree one strand at a time turning the strand off and then back on.
- * The delayMilliseconds is the amount of time each strand is off.
-*/
-TreeRotate::TreeRotate(int delayMilliseconds, int iterations)
+DecorRotate::DecorRotate(int delayMilliseconds, int iterations)
 {
     this->delayMs = delayMilliseconds;
     this->iterations = iterations;
-    this->currentStrand = treeStartIndex;
+    this->currentStrand = decorStartIndex;
 }
 
-void TreeRotate::Play()
+void DecorRotate::Play()
 {
-    this->currentStrand = treeStartIndex;
+    this->currentStrand = decorStartIndex;
 
     for (int iteration = 0; iteration < this->iterations; iteration++)
     {
-        for (int iOff = treeStartIndex; iOff <= treeEndIndex; iOff++)
+        for (int iOff = decorStartIndex; iOff <= decorEndIndex; iOff++)
         {
             Step();
             delay(this->delayMs);
@@ -28,9 +24,9 @@ void TreeRotate::Play()
     }
 }
 
-bool TreeRotate::Step()
+bool DecorRotate::Step()
 {
-    for (int i = treeStartIndex; i <= treeEndIndex; i++)
+    for (int i = decorStartIndex; i <= decorEndIndex; i++)
     {
         if (i == this->currentStrand)
         {
@@ -43,13 +39,13 @@ bool TreeRotate::Step()
     }
 
     this->lastStrand = this->currentStrand;
-    if (this->currentStrand < treeEndIndex)
+    if (this->currentStrand < decorEndIndex)
     {
         this->currentStrand = this->currentStrand + 1;
     }
     else
     {
-        this->currentStrand = treeStartIndex;
+        this->currentStrand = decorStartIndex;
     }
 
     return true;

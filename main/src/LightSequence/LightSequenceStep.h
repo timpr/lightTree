@@ -1,3 +1,5 @@
+#pragma once
+
 /**
  * Implemented by classes that can support stepping through one step at a time a particular sequence.
  * This can be useful for combining more than one sequence to create a new sequence.
