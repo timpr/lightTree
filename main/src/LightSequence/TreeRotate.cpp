@@ -1,8 +1,13 @@
 #include "TreeRotate.h"
-#include "Constants.cpp"
-#include "LightControls.h"
+#include "../Constants.cpp"
+#include "../LightControls.h"
 
-void TreeRotate::Next()
+TreeRotate::TreeRotate(int delayMilliseconds)
+{
+    this->delayMs = delayMilliseconds;
+}
+
+void TreeRotate::Play()
 {
     for (int iOff = treeStartIndex; iOff <= treeEndIndex; iOff++)
     {
@@ -17,6 +22,6 @@ void TreeRotate::Next()
                 LightControls::On(i);
             }
         }
-        delay(750);
+        delay(this->delayMs);
     }
 }

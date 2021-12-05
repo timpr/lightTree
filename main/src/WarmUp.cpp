@@ -9,7 +9,7 @@ WarmUp::WarmUp()
 void WarmUp::Switch()
 {
     LightControls::AllOff();
-    // this->ExecuteOnEachStrand(FlickerToSteadyOn, 0);
+    LightControls::ExecuteOnEachStrand(FlickerToSteadyOn, 0);
     this->RoundAbout();
     LightControls::AllOn();
 }
