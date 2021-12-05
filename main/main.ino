@@ -1,5 +1,6 @@
 #include "WarmUp.h"
 #include "TreeRotate.h"
+#include "LightControls.h"
 
 byte data = 0;
 
@@ -32,6 +33,6 @@ void loop()
   rotate.Next();
   rotate.Next();
   rotate.Next();
-  BaseLightSequence::AllOn();
+  LightControls::AllOn();
   delay(5000);
 }

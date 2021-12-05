@@ -1,23 +1,12 @@
 #include "stdint.h"
 #include "Arduino.h"
 
-class BaseLightSequence
+class LightControls
 {
 private:
     /* data */
 protected:
-    int const static startIndex = 1;
-    int const static endIndex = 8;
-    int const static treeStartIndex = 1;
-    int const static treeEndIndex = 4;
-
 public:
-    BaseLightSequence(/* args */);
-    ~BaseLightSequence();
-
-    const static uint8_t ON = LOW;
-    const static uint8_t OFF = HIGH;
-
     /**
      * Turns the outlet on and then off with the provided parameters
      */

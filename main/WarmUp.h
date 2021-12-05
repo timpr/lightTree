@@ -1,6 +1,4 @@
-#include "BaseLightSequence.h"
-
-class WarmUp : BaseLightSequence
+class WarmUp
 {
 private:
     void static FlickerToSteadyOn(int outletNumber);

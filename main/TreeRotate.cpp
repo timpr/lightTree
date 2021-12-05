@@ -1,6 +1,6 @@
 #include "TreeRotate.h"
 #include "Constants.cpp"
-#include "BaseLightSequence.h"
+#include "LightControls.h"
 
 void TreeRotate::Next()
 {
@@ -10,11 +10,11 @@ void TreeRotate::Next()
         {
             if (i == iOff)
             {
-                BaseLightSequence::Off(i);
+                LightControls::Off(i);
             }
             else
             {
-                BaseLightSequence::On(i);
+                LightControls::On(i);
             }
         }
         delay(750);
