@@ -1,22 +1,24 @@
-#include "AllToggle.h"
+#include "Toggle.h"
 #include "../Constants.h"
 #include "../LightControls.h"
 
-AllToggle::AllToggle(bool toggleOn, int durationMs)
+Toggle::Toggle(int startIndex, int endIndex, bool toggleOn, int durationMs)
 {
+    this->startIndex = startIndex;
+    this->endIndex = endIndex;
     this->durationMs = durationMs;
     this->toggleOn = toggleOn;
 }
 
-void AllToggle::Play()
+void Toggle::Play()
 {
     Step();
     delay(this->durationMs);
 }
 
-bool AllToggle::Step()
+bool Toggle::Step()
 {
-    for (int i = startIndex; i <= endIndex; i++)
+    for (int i = this->startIndex; i <= this->endIndex; i++)
     {
         if (this->toggleOn)
         {
