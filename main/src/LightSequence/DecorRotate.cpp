@@ -1,5 +1,5 @@
 #include "DecorRotate.h"
-#include "../Constants.cpp"
+#include "../Constants.h"
 #include "../LightControls.h"
 
 DecorRotate::DecorRotate(int delayMilliseconds, int iterations)

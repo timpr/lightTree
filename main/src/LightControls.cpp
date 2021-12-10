@@ -1,5 +1,5 @@
 #include "LightControls.h"
-#include "Constants.cpp"
+#include "Constants.h"
 
 void LightControls::ExecuteOnEachStrand(void (*pFunc)(int outletIndex), int pIntervalMilliseconds)
 {

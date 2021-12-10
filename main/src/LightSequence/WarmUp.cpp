@@ -1,6 +1,6 @@
 #include "WarmUp.h"
 #include "..\LightControls.h"
-#include "..\Constants.cpp"
+#include "..\Constants.h"
 
 WarmUp::WarmUp()
 {
