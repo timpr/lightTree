@@ -3,9 +3,14 @@
 
 void LightControls::ExecuteOnEachStrand(void (*pFunc)(int outletIndex), int pIntervalMilliseconds)
 {
+    LightControls::ExecuteOnStrands(pFunc, startIndex, endIndex, pIntervalMilliseconds);
+}
+
+void LightControls::ExecuteOnStrands(void (*pFunc)(int outletIndex), int pStartIndex, int pEndIndex, int pIntervalMilliseconds)
+{
     int index;
     // Step through each outlet
-    for (index = startIndex; index <= endIndex; index++)
+    for (index = pStartIndex; index <= pEndIndex; index++)
     {
         pFunc(index);
         delay(pIntervalMilliseconds);
@@ -31,6 +36,26 @@ void LightControls::AllOn()
 void LightControls::AllOff()
 {
     LightControls::ExecuteOnEachStrand(Off, 0);
+}
+
+void LightControls::TreeOn()
+{
+    LightControls::ExecuteOnStrands(On, treeStartIndex, treeEndIndex, 0);
+}
+
+void LightControls::TreeOff()
+{
+    LightControls::ExecuteOnStrands(Off, treeStartIndex, treeEndIndex, 0);
+}
+
+void LightControls::DecorOn()
+{
+    LightControls::ExecuteOnStrands(On, decorStartIndex, decorEndIndex, 0);
+}
+
+void LightControls::DecorOff()
+{
+    LightControls::ExecuteOnStrands(Off, decorStartIndex, decorEndIndex, 0);
 }
 
 void LightControls::On(int outletIndex)

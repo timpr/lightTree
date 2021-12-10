@@ -19,6 +19,13 @@ public:
      */
     void static ExecuteOnEachStrand(void (*pFunc)(int outletIndex), int pIntervalMilliseconds);
 
+    /**
+     * For each socket in the given index range, executes the given function
+     * pFunc: Function to execute on each strand
+     * pIntervalMilliseconds: Milliseconds between applying the logic on each strand
+     */
+    void static ExecuteOnStrands(void (*pFunc)(int outletIndex), int pStartIndex, int pEndIndex, int pIntervalMilliseconds);
+
     void static AllOn();
 
     void static On(int outletIndex);
@@ -26,4 +33,9 @@ public:
     void static AllOff();
 
     void static Off(int outletIndex);
+
+    void static TreeOn();
+    void static TreeOff();
+    void static DecorOn();
+    void static DecorOff();
 };
